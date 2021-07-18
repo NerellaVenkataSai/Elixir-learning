@@ -1,1 +1,7 @@
 1. mix new <project-name>
+
+
+
+
+//Interactive exlixir shell
+iex -S mix
