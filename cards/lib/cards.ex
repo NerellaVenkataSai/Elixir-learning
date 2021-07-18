@@ -34,4 +34,17 @@ defmodule Cards do
   def deal(deck, hand_size) do
     Enum.split(deck, hand_size)
   end
+
+  def save(deck, fileName) do
+    binary = :erlang.term_to_binary(deck)
+    File.write(fileName, binary)
+  end
+
+  def load(fileName) do
+    {status, binary} = File.read(fileName)
+    case status do
+      :ok -> :erlang.binary_to_term(binary)
+      :error -> "This fie does not exist"
+    end
+  end
 end
