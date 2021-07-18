@@ -56,4 +56,13 @@ defmodule Cards do
       {:error, _reason} -> "This file doesn't exist"
     end
   end
+
+  def create_hand(hand_size) do
+    # pipe operator chain of functions where the result of previous function will be sent to next function automatically as first argument
+
+    Cards.create_deck
+      |> Cards.shuffle
+      |> Cards.deal(hand_size)
+
+  end
 end
