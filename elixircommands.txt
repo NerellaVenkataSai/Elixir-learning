@@ -5,3 +5,7 @@
 
 //Interactive exlixir shell
 iex -S mix
+
+
+//doc commands
+mix docs
