@@ -41,10 +41,19 @@ defmodule Cards do
   end
 
   def load(fileName) do
-    {status, binary} = File.read(fileName)
-    case status do
-      :ok -> :erlang.binary_to_term(binary)
-      :error -> "This fie does not exist"
+    # one approach of case
+    # {status, binary} = File.read(fileName)
+    # case status do
+    #   :ok -> :erlang.binary_to_term(binary)
+    #   :error -> "This fie does not exist"
+    # end
+
+    # second approach
+    # _<variable_name> will be considered as unused variable
+
+    case File.read(fileName) do
+      {:ok, binary} -> :erlang.binary_to_term(binary)
+      {:error, _reason} -> "This file doesn't exist"
     end
   end
 end
