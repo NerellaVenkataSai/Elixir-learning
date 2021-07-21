@@ -1,10 +1,16 @@
 1. mix new <project-name>
 
+//DB
+mix ecto.create 
+mix ecto.gen.migration <table_name>
+mix ecto.migrate
+
 
 
 
 //Interactive exlixir shell
 iex -S mix
+iex -S mix phoenix.server
 
 
 //doc commands
