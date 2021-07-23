@@ -15,3 +15,13 @@ iex -S mix phoenix.server
 
 //doc commands
 mix docs
+
+
+
+
+logger
+IO.puts "********"
+IO.inspect conn
+IO.puts "********"
+IO.inspect params
+IO.puts "********"
